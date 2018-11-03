@@ -1,0 +1,55 @@
+<!--
+  Generated template for the AddPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="product.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Price</ion-label>
+      <ion-input type="text" [(ngModel)]="product.price"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-select [(ngModel)]="product.category">
+        <ion-option value="clothing">Clothing</ion-option>
+        <ion-option value="shoes">Shoes</ion-option>
+        <ion-option value="hat">Hat</ion-option>
+        <ion-option value="others">Others</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Image URL</ion-label>
+      <ion-input type="text" [(ngModel)]="product.imageURL"></ion-input>
+    </ion-item>
+    <img [src]="product.imageURL || 'assets/imgs/logo.png'">
+  </ion-list>
+
+  <div padding>
+    <button ion-button block (click)="save()">Save</button>
+  </div>
+
+</ion-content>
